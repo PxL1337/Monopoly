@@ -5,28 +5,33 @@ package fr.eni.monopoly.bo;
  */
 public class Depart extends Case{
 
-    public int Salaire = 200;
+    /**
+     * The constant SALAIRE.
+     */
+    public static final int SALAIRE = 200;
 
     /**
      * Instantiates a new Depart.
      *
-     * @param nom the nom
+     *
      */
     public Depart() {
         super("Départ");
     }
 
     @Override
-    public joueurPasser(Joueur j) {
+    public void joueurPasse(Joueur j) {
         payerSalaire(j);
     }
 
     @Override
-    public JoueurArrive(Joueur j) {
-        payerSalaire(j) * 2;
+    public void joueurArrive(Joueur j) {
+        super.joueurArrive(j);
+        payerSalaire(j);
     }
 
-    private payerSalaire(Joueur j) {
-        j.setArgent(j.getArgent() + Salaire);
+    private void payerSalaire(Joueur j) {
+        System.out.printf("%s touche %d€%n", j, SALAIRE);
+        j.crediter(SALAIRE);
     }
 }

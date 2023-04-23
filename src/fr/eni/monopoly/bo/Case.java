@@ -15,7 +15,7 @@ public class Case {
      * @param nom the nom
      */
     public Case(String nom) {
-
+        this.nom = nom;
     }
 
     /**
@@ -25,19 +25,20 @@ public class Case {
      * @return the boolean
      */
     public boolean joueurPart(Joueur j) {
+        System.out.printf("%s est sur la case %s%n", j, this.nom);
+        return true;
+    }
+
+    public void joueurPasse(Joueur j) {
 
     }
 
-    public joueurPasse(Joueur j) {
-
-    }
-
-    public joueurArrive(Joueur j) {
-
+    public void joueurArrive(Joueur j) {
+        System.out.printf("%s arrive sur la case %s%n", j, this.nom);
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return this.nom;
     }
 }

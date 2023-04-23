@@ -37,11 +37,12 @@ public class Terrain extends Propriete{
         this.loyer[4] = prixAchat * 2 / 3;
         this.loyer[5] = prixAchat;
     }
-
-    protected payerLoyer(Joueur j, Joueur proprio){
-        int montant = this.loyer[this.niveauConstruction];
-        j.setArgent(j.getArgent() - montant);
-        proprio.setArgent(proprio.getArgent() + montant);
+@Override
+    protected void payerLoyer(Joueur locataire, Joueur proprietaire){
+        int loyer = this.loyer[this.niveauConstruction];
+        if (this.niveauConstruction == 0 && this.txComplGroupe ==100)
+            loyer *= 2;
+        locataire.payeA(proprietaire, loyer);
     }
 
     public void construire(){

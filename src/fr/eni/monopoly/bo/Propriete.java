@@ -1,14 +1,15 @@
 package fr.eni.monopoly.bo;
 
-public class Propriete extends Case{
+public abstract class Propriete extends Case{
     private int prixAchat;
     private Joueur proprio;
     private Groupe groupe;
-    private int txComplGroupe;
+    protected int txComplGroupe;
     private boolean hypotheque;
 
 
-    public Propriete(int prixAchat, Groupe groupe) {
+    public Propriete(String nom, int prixAchat, Groupe groupe) {
+        super(nom);
         this.groupe;
         groupe.ajouterPropriete(this);
         this.prixAchat = prixAchat;
@@ -16,20 +17,22 @@ public class Propriete extends Case{
         this.hypotheque = false;
     }
 
-    public Groupe getGoupre(){
+    public Groupe getGroupe(Propriete p){
         return groupe;
     }
-    public joueurArrive(Joueur j) {
-        if (this.proprio == null) {
-            if (j.getArgent() >= this.prixAchat) {
-                j.setArgent(j.getArgent() - this.prixAchat);
+    @Override
+    public void joueurArrive(Joueur j) throws FailliteException, AllerEnPrisonException {
+        super.joueurArrive(j);
+        if (this.proprio == null){
+            if (Outils.ouiNon(String.format("Voulez-vous acheter %s pour%d€ ?", this.nom, this.prixAchat))){
+                j.debiter(this.prixAchat);
                 this.setProprio(j);
             }
-        } else {
-            if (this.proprio != j) {
-                int montant = this.prixAchat * this.txComplGroupe / 100;
-                j.setArgent(j.getArgent() - montant);
-                this.proprio.setArgent(this.proprio.getArgent() + montant);
+        }else {
+            if (j.equals(this.proprio)){
+                System.out.printf("%s est chez lui%n", j);
+            else {
+                this.payerLoyer(j, this.proprio);
             }
         }
     }
@@ -58,7 +61,7 @@ public class Propriete extends Case{
         return txComplGroupe;
     }
 
-    public booblean isHypotheque() {
+    public boolean isHypotheque() {
         return hypotheque;
     }
 
@@ -70,5 +73,12 @@ public class Propriete extends Case{
         if (this.hypotheque)
             return this.prixAchat / 2;
         return this.prixAchat;
+    }
+
+    protected abstract payerLoyer(Joueur j, Joueur proprio);
+
+    @Override
+    public String toString() {
+        return String.format("%s (%s))", super.toString(), this.groupe);
     }
 }

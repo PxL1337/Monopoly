@@ -19,11 +19,39 @@ public class Joueur {
         this.position = 0;
     }
 
+    /**
+     * Sets argent.
+     *
+     * @param argent the argent
+     */
     public void setArgent(int argent) {
         this.argent = argent;
     }
 
+    /**
+     * Gets argent.
+     *
+     * @return the argent
+     */
     public int getArgent() {
         return argent;
+    }
+
+    /**
+     * Debiter.
+     *
+     * @param prix the prix
+     */
+    public void debiter(int prix) {
+        this.argent -= prix;
+    }
+
+    /**
+     * Crediter.
+     *
+     * @param SALAIRE the salaire
+     */
+    public void crediter(int SALAIRE) {
+        this.argent += SALAIRE;
     }
 }

@@ -5,30 +5,14 @@ public class Gare extends Propriete{
         super(nom);
     }
 
-
-    protected payerLoyer(Joueur j, Joueur proprio){
-        int nbGare = 0;
-        for (Propriete p : proprio.getPopriete()){
-            if (p instanceof Gare){
-                nbGare++;
-            }
-        }
-        int loyer = 0;
-        switch (nbGare){
-            case 1:
-                loyer = 25;
-                break;
-            case 2:
-                loyer = 50;
-                break;
-            case 3:
-                loyer = 100;
-                break;
-            case 4:
-                loyer = 200;
-                break;
-        }
-        j.setArgent(j.getArgent() - loyer);
-        proprio.setArgent(proprio.getArgent() + loyer);
+    @Override
+    protected void payerLoyer(Joueur passager, Joueur p){
+        int loyer = this.txComplGroupe;
+        if (loyer == 75)
+            loyer = 100;
+        else if (loyer == 100)
+            loyer = 200;
+        System.out.printf("%s possède %d gare%s%n", p, this.txComplGroupe*4/100, loyer>25?"s":"");
+        passager.payeA(p, loyer);
     }
 }

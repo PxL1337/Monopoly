@@ -5,24 +5,17 @@ public class ServicePublic extends Propriete{
         super(nom);
     }
 
-
-    protected payerLoyer(Joueur j, Joueur proprio){
-        int nbService = 0;
-        for (Propriete p : proprio.getProprietes()){
-            if (p instanceof ServicePublic){
-                nbService++;
-            }
+    @Override
+    protected void payerLoyer(Joueur utilisateur, Joueur proprietaire){
+        int nb = this.txComplGroupe*2/100;
+        String s = nb<2?"":"s"
+        int loyer = Monopoly.getDe1().getFaceTiree() + Monopoly.getDe2().getFaceTiree();
+        if (nb == 1) {
+            loyer *= 4;
+        } else {
+            loyer *= 10;
+            System.out.printf("%s possède %d service%s%n", proprietaire, nb, s, s);
+            utilisateur.payeA(proprietaire, loyer);
         }
-        int loyer = 0;
-        switch (nbService){
-            case 1:
-                loyer = 4 * j.getLanceDe();
-                break;
-            case 2:
-                loyer = 10 * j.getLanceDe();
-                break;
-        }
-        j.setArgent(j.getArgent() - loyer);
-        proprio.setArgent(proprio.getArgent() + loyer);
     }
 }

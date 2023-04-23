@@ -9,7 +9,9 @@ public class ImpotTaxe extends Case {
     }
 
     @Override
-    public joueurArrive(Joueur j) {
-        j.setArgent(j.getArgent() - prix);
+    public void joueurArrive(Joueur j) {
+        super.joueurArrive(j);
+        System.out.printf("%s paye %d€ à la banque%n", j, this.prix);
+        j.debiter(this.prix);
     }
 }
