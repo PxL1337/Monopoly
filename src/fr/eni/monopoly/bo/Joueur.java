@@ -4,16 +4,26 @@ package fr.eni.monopoly.bo;
  * The type Joueur.
  */
 public class Joueur {
+    private int argent;
+    private String nom;
+    private int position;
+
     /**
-     * The Nom.
+     * Instantiates a new Joueur.
+     *
+     * @param nom the nom
      */
-    String nom;
-    /**
-     * The Prenom.
-     */
-    String Prenom;
-    /**
-     * The Age.
-     */
-    int age;
+    public Joueur(String nom) {
+        this.nom = nom;
+        this.argent = 1500;
+        this.position = 0;
+    }
+
+    public void setArgent(int argent) {
+        this.argent = argent;
+    }
+
+    public int getArgent() {
+        return argent;
+    }
 }

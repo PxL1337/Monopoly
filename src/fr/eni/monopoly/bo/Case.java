@@ -28,5 +28,16 @@ public class Case {
 
     }
 
+    public joueurPasse(Joueur j) {
 
+    }
+
+    public joueurArrive(Joueur j) {
+
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

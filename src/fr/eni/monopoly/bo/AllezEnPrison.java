@@ -10,7 +10,11 @@ public class AllezEnPrison extends Case{
      *
      * @param nom the nom
      */
-    public AllezEnPrison(String nom) {
-        super(nom);
+    public AllezEnPrison() {
+
+    }
+
+    public AllezEnPrison(Joueur j) {
+        super(j);
     }
 }
