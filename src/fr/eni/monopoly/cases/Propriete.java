@@ -85,7 +85,7 @@ public abstract class Propriete extends Case implements Detenable {
         this.hypotheque = hypotheque;
     }
 
-    protected abstract payerLoyer(Joueur j, Joueur proprio);
+    protected abstract void payerLoyer(Joueur j, Joueur proprio);
 
     @Override
     public String toString() {

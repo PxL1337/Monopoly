@@ -40,10 +40,13 @@ public class Joueur {
     /**
      * Debiter.
      *
-     * @param prix the prix
+     * @param somme the prix
      */
-    public void debiter(int prix) {
-        this.argent -= prix;
+    public void debiter(int somme) throws FailliteException {
+        this.argent -= somme;
+        if (this.argent < 0) {
+            throw new FailliteException("Le joueur " + this.nom + " est en faillite, il quitte la partie !", this);
+        }
     }
 
     /**
@@ -53,5 +56,10 @@ public class Joueur {
      */
     public void crediter(int SALAIRE) {
         this.argent += SALAIRE;
+    }
+
+    public void payeA(Joueur j, int somme) throws FailliteException {
+        this.debiter(somme);
+        j.crediter(somme);
     }
 }
