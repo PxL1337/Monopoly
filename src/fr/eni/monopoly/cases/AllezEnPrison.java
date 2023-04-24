@@ -1,9 +1,11 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
+
+import fr.eni.monopoly.Joueur;
 
 /**
  * The type Allez en prison.
  */
-public class AllezEnPrison extends Case{
+public class AllezEnPrison extends Case {
 
     /**
      * Instantiates a new Allez en prison.

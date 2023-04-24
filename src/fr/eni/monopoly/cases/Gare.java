@@ -1,4 +1,6 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
+
+import fr.eni.monopoly.Joueur;
 
 public class Gare extends Propriete{
     public Gare(String nom) {

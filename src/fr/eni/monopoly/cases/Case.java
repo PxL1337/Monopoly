@@ -1,4 +1,6 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
+
+import fr.eni.monopoly.Joueur;
 
 /**
  * The type Case.

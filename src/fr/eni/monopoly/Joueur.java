@@ -1,4 +1,4 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly;
 
 /**
  * The type Joueur.

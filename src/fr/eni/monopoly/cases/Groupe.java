@@ -1,4 +1,4 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
 
 public class Groupe {
     private Propriete[] proprietes = new Propriete[4]

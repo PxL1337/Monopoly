@@ -1,10 +1,12 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
 
-public class Chance extends PicocherCase{
+import fr.eni.monopoly.Joueur;
+
+public class CaisseDeLaCommunaute extends PiocherCase {
     private Pioche carte;
 
-    public Chance() {
-        super("Chance");
+    public CaisseDeLaCommunaute(String nom) {
+        super(nom);
         carte = new Pioche();
     }
 

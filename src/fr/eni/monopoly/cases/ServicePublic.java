@@ -1,4 +1,6 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
+
+import fr.eni.monopoly.Joueur;
 
 public class ServicePublic extends Propriete{
     public ServicePublic(String nom) {

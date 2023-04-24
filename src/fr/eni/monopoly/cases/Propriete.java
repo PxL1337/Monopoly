@@ -1,11 +1,18 @@
-package fr.eni.monopoly.bo;
+package fr.eni.monopoly.cases;
 
-public abstract class Propriete extends Case{
+import fr.eni.monopoly.AllerEnPrisonException;
+import fr.eni.monopoly.Detenable;
+import fr.eni.monopoly.FailliteException;
+import fr.eni.monopoly.Joueur;
+import fr.eni.util.Outils;
+
+public abstract class Propriete extends Case implements Detenable {
     private int prixAchat;
     private Joueur proprio;
     private Groupe groupe;
     protected int txComplGroupe;
     private boolean hypotheque;
+    private Joueur proprio;
 
 
     public Propriete(String nom, int prixAchat, Groupe groupe) {
@@ -23,33 +30,42 @@ public abstract class Propriete extends Case{
     @Override
     public void joueurArrive(Joueur j) throws FailliteException, AllerEnPrisonException {
         super.joueurArrive(j);
-        if (this.proprio == null){
-            if (Outils.ouiNon(String.format("Voulez-vous acheter %s pour%d€ ?", this.nom, this.prixAchat))){
+        if (this.proprio == null) {
+            if (Outils.ouiNon(String.format("Voulez-vous acheter %s pour%d€ ?", this.nom, this.prixAchat))) {
                 j.debiter(this.prixAchat);
                 this.setProprio(j);
             }
-        }else {
-            if (j.equals(this.proprio)){
+        } else {
+            if (j.equals(this.proprio)) {
                 System.out.printf("%s est chez lui%n", j);
-            else {
-                this.payerLoyer(j, this.proprio);
+            else{
+                    this.payerLoyer(j, this.proprio);
+                }
             }
         }
     }
 
+    @Override
     public Joueur getProprio() {
-        return proprio;
+        return this.proprio;
     }
 
+    @Override
     public void setProprio(Joueur j){
-        Joueur oldProprio = this.proprio;
+        Joueur ancienProprio = this.proprio;
         this.proprio = j;
-        if (oldProprio != null)
-            this.clalculerCompletionGroupe(oldProprio);
-        this.clalculerCompletionGroupe(j);
+        if (ancienProprio != null)
+            this.calculerCompletionGroupe(ancienProprio);
+        this.calculerCompletionGroupe(j);
     }
 
-    private void clalculerCompletionGroupe(Joueur j) {
+    @Override
+    public int getValeur() {
+        return this.prixAchat;
+    }
+
+
+    private void calculerCompletionGroupe(Joueur j) {
 
     }
 
@@ -67,12 +83,6 @@ public abstract class Propriete extends Case{
 
     public void setHypotheque(boolean hypotheque) {
         this.hypotheque = hypotheque;
-    }
-
-    public int getValeur() {
-        if (this.hypotheque)
-            return this.prixAchat / 2;
-        return this.prixAchat;
     }
 
     protected abstract payerLoyer(Joueur j, Joueur proprio);
