@@ -38,11 +38,10 @@ public abstract class Propriete extends Case implements Detenable {
         } else {
             if (j.equals(this.proprio)) {
                 System.out.printf("%s est chez lui%n", j);
-            else{
+            }else{
                     this.payerLoyer(j, this.proprio);
                 }
             }
-        }
     }
 
     @Override
