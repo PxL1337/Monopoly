@@ -7,6 +7,11 @@ public class AllerEnPrisonException extends Exception{
         super(message);
         this.joueur = j;
     }
+
+    public AllerEnPrisonException() {
+
+    }
+
     public Joueur getJoueur() {
         return this.joueur;
     }

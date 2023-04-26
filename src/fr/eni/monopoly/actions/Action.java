@@ -1,25 +1,27 @@
 package fr.eni.monopoly.actions;
 
+import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
+import fr.eni.monopoly.AllerEnPrisonException;
 
 public abstract class Action {
-    private String Libelle;
+    private String libelle;
 
     public Action(String libelle) {
-        this.Libelle = libelle;
+        this.libelle = libelle;
     }
 
     public String getLibelle() {
-        return this.Libelle;
+        return libelle;
     }
 
-    public void realiser(Joueur j) {
-        System.out.printf("%s réalise l'action %s%n", j, this.Libelle);
+    public void realiser(Joueur j) throws FailliteException, AllerEnPrisonException {
+        System.out.printf("Carte Triée %s%n", libelle);
     }
 
     @Override
     public String toString() {
-        return this.Libelle;
+        return "Carte" + libelle;
     }
 
 }

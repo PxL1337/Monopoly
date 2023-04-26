@@ -1,5 +1,8 @@
 package fr.eni.util.jeu;
 
-public class Affichable {
-
+public interface Affichable {
+    /**
+     * Afficher.
+     */
+    char getSymbole();
 }

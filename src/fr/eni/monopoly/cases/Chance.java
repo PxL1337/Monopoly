@@ -17,4 +17,7 @@ public class Chance extends PiocherCase {
     public remettreEnJeu() {
         carte.remettreEnJeu();
     }
+
+    public static Object getCartes() {
+    }
 }

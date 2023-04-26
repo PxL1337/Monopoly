@@ -1,6 +1,5 @@
 package fr.eni.monopoly;
-import fr.eni.util.*;
-import fr.eni.util.jeu.deDes.*;
+
 public class Monopoly {
     public static void main(String[] args) {
 
