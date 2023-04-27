@@ -1,9 +1,20 @@
 package fr.eni.util;
 
+/**
+ * The type Anneau.
+ *
+ * @param <T> the type parameter
+ */
 public class Anneau<T> {
     private Maillon<T> ptEntree;
     private int nbElements = 0;
 
+    /**
+     * Ajouter maillon.
+     *
+     * @param element the element
+     * @return the maillon
+     */
     public Maillon<T> ajouter(T element) {
         this.nbElements++;
         if (this.ptEntree == null) {
@@ -18,6 +29,11 @@ public class Anneau<T> {
         return this.ptEntree;
     }
 
+    /**
+     * Retirer.
+     *
+     * @param element the element
+     */
     public void retirer(T element) {
         if (this.nbElements > 0) {
             int i = 0;
@@ -37,6 +53,11 @@ public class Anneau<T> {
         }
     }
 
+    /**
+     * Gets nb elements.
+     *
+     * @return the nb elements
+     */
     public int getNbElements() {
         return nbElements;
     }
@@ -48,6 +69,11 @@ public class Anneau<T> {
         return this.ptEntree.toString(this.nbElements);
     }
 
+    /**
+     * Gets pt entree.
+     *
+     * @return the pt entree
+     */
     public Maillon<T> getPtEntree() {
         return this.ptEntree;
     }

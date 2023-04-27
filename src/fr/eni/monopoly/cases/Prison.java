@@ -8,9 +8,15 @@ import fr.eni.monopoly.Joueur;
 import fr.eni.monopoly.Monopoly;
 import fr.eni.util.Outils;
 
+/**
+ * The type Prison.
+ */
 public class Prison extends Case{
     private Map<Joueur,Integer> nbTentatives = new Hashtable<>();
 
+    /**
+     * Instantiates a new Prison.
+     */
     public Prison() {
         super("Prison");
     }

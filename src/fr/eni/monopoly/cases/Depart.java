@@ -14,8 +14,6 @@ public class Depart extends Case{
 
     /**
      * Instantiates a new Depart.
-     *
-     *
      */
     public Depart() {
         super("Départ");

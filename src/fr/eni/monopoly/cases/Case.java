@@ -31,10 +31,20 @@ public class Case {
         return true;
     }
 
+    /**
+     * Joueur passe.
+     *
+     * @param j the j
+     */
     public void joueurPasse(Joueur j) {
 
     }
 
+    /**
+     * Joueur arrive.
+     *
+     * @param j the j
+     */
     public void joueurArrive(Joueur j) {
         System.out.printf("%s arrive sur la case %s%n", j, this.nom);
     }

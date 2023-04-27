@@ -2,6 +2,9 @@ package fr.eni.util.jeu.deDes;
 
 import java.util.Random;
 
+/**
+ * The type De 2.
+ */
 public class De2 {
     private int nbFaces;
     private int FaceTiree;
@@ -10,6 +13,12 @@ public class De2 {
     private De2() {
     }
 
+    /**
+     * Creer de de 2.
+     *
+     * @param nbFaces the nb faces
+     * @return the de 2
+     */
     public static De2 creerDe(int nbFaces) {
         De2.verifNbFaces(nbFaces);
         De2 d = new De2();
@@ -18,6 +27,11 @@ public class De2 {
         return d;
     }
 
+    /**
+     * Gets nb faces.
+     *
+     * @return the nb faces
+     */
     public int getNbFaces() {
         return nbFaces;
     }
@@ -33,10 +47,20 @@ public class De2 {
         }
     }
 
+    /**
+     * Lancer int.
+     *
+     * @return the int
+     */
     public int lancer() {
         return this.FaceTiree = rand.nextInt(this.nbFaces) + 1;
     }
 
+    /**
+     * Gets face tiree.
+     *
+     * @return the face tiree
+     */
     public int getFaceTiree() {
         return this.FaceTiree;
     }

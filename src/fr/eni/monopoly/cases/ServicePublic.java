@@ -3,7 +3,15 @@ package fr.eni.monopoly.cases;
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 
+/**
+ * The type Service public.
+ */
 public class ServicePublic extends Propriete{
+    /**
+     * Instantiates a new Service public.
+     *
+     * @param nom the nom
+     */
     public ServicePublic(String nom) {
         super(nom);
     }

@@ -3,7 +3,15 @@ package fr.eni.monopoly.cases;
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 
+/**
+ * The type Gare.
+ */
 public class Gare extends Propriete{
+    /**
+     * Instantiates a new Gare.
+     *
+     * @param nom the nom
+     */
     public Gare(String nom) {
         super("Gare "+nom, 200, Groupe.GARE);
     }

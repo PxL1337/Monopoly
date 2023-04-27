@@ -41,6 +41,7 @@ public class Joueur {
      * Debiter.
      *
      * @param somme the prix
+     * @throws FailliteException the faillite exception
      */
     public void debiter(int somme) throws FailliteException {
         this.argent -= somme;
@@ -58,6 +59,13 @@ public class Joueur {
         this.argent += SALAIRE;
     }
 
+    /**
+     * Paye a.
+     *
+     * @param j     the j
+     * @param somme the somme
+     * @throws FailliteException the faillite exception
+     */
     public void payeA(Joueur j, int somme) throws FailliteException {
         this.debiter(somme);
         j.crediter(somme);

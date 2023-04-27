@@ -1,6 +1,14 @@
 package fr.eni.monopoly;
 
+/**
+ * The type Monopoly.
+ */
 public class Monopoly {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
 
     }

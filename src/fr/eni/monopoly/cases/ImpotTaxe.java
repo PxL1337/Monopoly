@@ -2,9 +2,18 @@ package fr.eni.monopoly.cases;
 
 import fr.eni.monopoly.Joueur;
 
+/**
+ * The type Impot taxe.
+ */
 public class ImpotTaxe extends Case {
     private int prix;
 
+    /**
+     * Instantiates a new Impot taxe.
+     *
+     * @param nom  the nom
+     * @param prix the prix
+     */
     public ImpotTaxe(String nom, int prix) {
         super(nom);
         this.prix = prix;

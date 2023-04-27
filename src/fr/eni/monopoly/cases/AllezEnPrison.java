@@ -16,6 +16,11 @@ public class AllezEnPrison extends Case {
 
     }
 
+    /**
+     * Instantiates a new Allez en prison.
+     *
+     * @param j the j
+     */
     public AllezEnPrison(Joueur j) {
         super(j);
     }

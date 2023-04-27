@@ -6,15 +6,28 @@ import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 import fr.eni.util.Outils;
 
+/**
+ * The type Propriete.
+ */
 public abstract class Propriete extends Case implements Detenable {
     private int prixAchat;
     private Joueur proprio;
     private Groupe groupe;
+    /**
+     * The Tx compl groupe.
+     */
     protected int txComplGroupe;
     private boolean hypotheque;
     private Joueur proprio;
 
 
+    /**
+     * Instantiates a new Propriete.
+     *
+     * @param nom       the nom
+     * @param prixAchat the prix achat
+     * @param groupe    the groupe
+     */
     public Propriete(String nom, int prixAchat, Groupe groupe) {
         super(nom);
         this.groupe;
@@ -24,6 +37,12 @@ public abstract class Propriete extends Case implements Detenable {
         this.hypotheque = false;
     }
 
+    /**
+     * Get groupe groupe.
+     *
+     * @param p the p
+     * @return the groupe
+     */
     public Groupe getGroupe(Propriete p){
         return groupe;
     }
@@ -68,22 +87,48 @@ public abstract class Propriete extends Case implements Detenable {
 
     }
 
+    /**
+     * Gets groupe.
+     *
+     * @return the groupe
+     */
     public Groupe getGroupe() {
         return groupe;
     }
 
+    /**
+     * Gets completion groupe.
+     *
+     * @return the completion groupe
+     */
     public int getCompletionGroupe() {
         return txComplGroupe;
     }
 
+    /**
+     * Is hypotheque boolean.
+     *
+     * @return the boolean
+     */
     public boolean isHypotheque() {
         return hypotheque;
     }
 
+    /**
+     * Sets hypotheque.
+     *
+     * @param hypotheque the hypotheque
+     */
     public void setHypotheque(boolean hypotheque) {
         this.hypotheque = hypotheque;
     }
 
+    /**
+     * Payer loyer.
+     *
+     * @param j       the j
+     * @param proprio the proprio
+     */
     protected abstract void payerLoyer(Joueur j, Joueur proprio);
 
     @Override

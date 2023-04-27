@@ -9,9 +9,18 @@ import fr.eni.monopoly.cases.Chance
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Argent ou chance action.
+ */
 public class ArgentOuChanceAction extends Action{
     private int somme;
 
+    /**
+     * Instantiates a new Argent ou chance action.
+     *
+     * @param libelle the libelle
+     * @param somme   the somme
+     */
     public ArgentOuChanceAction(String libelle, int somme) {
         super(String.format("%s%d€ ou bien tirez une carte Chance", libelle, Math.abs(somme)));
         this.somme = somme;

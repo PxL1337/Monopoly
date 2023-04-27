@@ -2,6 +2,9 @@ package fr.eni.monopoly.cases;
 
 import fr.eni.monopoly.Joueur;
 
+/**
+ * The type Terrain.
+ */
 public class Terrain extends Propriete{
     private int[] loyer;
     private int coutConstruction;
@@ -9,22 +12,50 @@ public class Terrain extends Propriete{
     private int nbMaisonsDispo;
     private int nbHotelsDispo;
 
+    /**
+     * Gets cout construction.
+     *
+     * @return the cout construction
+     */
     public int getCoutConstruction() {
         return coutConstruction;
     }
 
+    /**
+     * Gets niveau construction.
+     *
+     * @return the niveau construction
+     */
     public int getNiveauConstruction() {
         return niveauConstruction;
     }
 
+    /**
+     * Gets nb maisons dispo.
+     *
+     * @return the nb maisons dispo
+     */
     public int getNbMaisonsDispo() {
         return nbMaisonsDispo;
     }
 
+    /**
+     * Gets nb hotels dispo.
+     *
+     * @return the nb hotels dispo
+     */
     public int getNbHotelsDispo() {
         return nbHotelsDispo;
     }
 
+    /**
+     * Instantiates a new Terrain.
+     *
+     * @param nom              the nom
+     * @param prixAchat        the prix achat
+     * @param groupe           the groupe
+     * @param coutConstruction the cout construction
+     */
     public Terrain(String nom, int prixAchat, Groupe groupe, int coutConstruction){
         super(nom, prixAchat, groupe);
         this.coutConstruction = coutConstruction;
@@ -47,6 +78,9 @@ public class Terrain extends Propriete{
         locataire.payeA(proprietaire, loyer);
     }
 
+    /**
+     * Construire.
+     */
     public void construire(){
         if (this.niveauConstruction < 5){
             if (this.niveauConstruction < 4){
