@@ -1,5 +1,7 @@
 package fr.eni.monopoly;
 
+import fr.eni.util.Anneau;
+
 /**
  * The type Monopoly.
  */
@@ -31,5 +33,8 @@ public class Monopoly {
             System.err.println(e.getMessage());
         }
 
+    }
+
+    public static Anneau<Object> getPlateau() {
     }
 }

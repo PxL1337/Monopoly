@@ -13,9 +13,8 @@ public class AllerEnPrisonException extends Exception{
      * @param message the message
      * @param j       the j
      */
-    public AllerEnPrisonException(String message, Joueur j) {
+    public AllerEnPrisonException(String message) {
         super(message);
-        this.joueur = j;
     }
 
     /**
@@ -23,14 +22,5 @@ public class AllerEnPrisonException extends Exception{
      */
     public AllerEnPrisonException() {
 
-    }
-
-    /**
-     * Gets joueur.
-     *
-     * @return the joueur
-     */
-    public Joueur getJoueur() {
-        return this.joueur;
     }
 }

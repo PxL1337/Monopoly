@@ -1,5 +1,7 @@
 package fr.eni.monopoly.cases;
 
+import fr.eni.monopoly.AllerEnPrisonException;
+import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 
 /**
@@ -45,7 +47,7 @@ public class Case {
      *
      * @param j the j
      */
-    public void joueurArrive(Joueur j) {
+    public void joueurArrive(Joueur j) throws FailliteException, AllerEnPrisonException {
         System.out.printf("%s arrive sur la case %s%n", j, this.nom);
     }
 

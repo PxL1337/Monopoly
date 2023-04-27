@@ -4,7 +4,7 @@ import fr.eni.monopoly.AllerEnPrisonException;
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 import fr.eni.util.Outils;
-import fr.eni.monopoly.cases.Chance
+import fr.eni.monopoly.cases.Chance;
 
 import java.util.Arrays;
 import java.util.List;

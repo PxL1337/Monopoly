@@ -33,12 +33,12 @@ public class Prison extends Case{
             if (this.nbTentatives.containsKey(j))
                 nb = this.nbTentatives.get(j) + 1;
             this.nbTentatives.put(j, nb);
-            boolean carteLibere = j.possedeCarteLiberePrison() && Outils.saisieOuiNon("Voulez-vous utiliser votre carte de libération de prison ?");
+            boolean carteLibere = j.possedeCarteLiberePrison() && Outils.ouiNon("Voulez-vous utiliser votre carte de libération de prison ?");
             if (carteLibere) {
                 Monopoly.utiliserLiberePrison();
                 part = true;
             }
-            boolean paye = !carteLibere && (nb >= 3 || Outils.saisieOuiNon("Voulez-vous payer 50€ pour sortir de prison ?"));
+            boolean paye = !carteLibere && (nb >= 3 || Outils.ouiNon("Voulez-vous payer 50€ pour sortir de prison ?"));
             if (paye) {
                 System.out.printf("%s paye 50€ pour sortir de prison%n", j);
                 j.debiter(50);

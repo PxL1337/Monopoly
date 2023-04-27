@@ -2,6 +2,7 @@ package fr.eni.monopoly.cases;
 
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
+import fr.eni.monopoly.Monopoly;
 
 /**
  * The type Service public.
@@ -19,7 +20,7 @@ public class ServicePublic extends Propriete{
     @Override
     protected void payerLoyer(Joueur utilisateur, Joueur proprietaire) throws FailliteException {
         int nb = this.txComplGroupe*2/100;
-        String s = nb<2?"":"s"
+        String s = nb<2?"":"s";
         int loyer = Monopoly.getDe1().getFaceTiree() + Monopoly.getDe2().getFaceTiree();
         if (nb == 1) {
             loyer *= 4;

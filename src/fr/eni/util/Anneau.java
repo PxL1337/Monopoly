@@ -74,7 +74,7 @@ public class Anneau<T> {
      *
      * @return the pt entree
      */
-    public Maillon<T> getPtEntree() {
+    public Maillon<T> getEntree() {
         return this.ptEntree;
     }
 }

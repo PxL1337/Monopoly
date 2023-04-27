@@ -1,6 +1,7 @@
 package fr.eni.monopoly.cases;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The enum Groupe.
@@ -10,75 +11,41 @@ public enum Groupe {
      * Gare groupe.
      */
     GARE,
-    /**
-     * Compagnie groupe.
-     */
     COMPAGNIE,
-    /**
-     * Mauve groupe.
-     */
     MAUVE,
-    /**
-     * Bleu ciel groupe.
-     */
     BLEU_CIEL,
-    /**
-     * Rose groupe.
-     */
     ROSE,
-    /**
-     * Orange groupe.
-     */
     ORANGE,
-    /**
-     * Rouge groupe.
-     */
     ROUGE,
-    /**
-     * Jaune groupe.
-     */
     JAUNE,
-    /**
-     * Vert groupe.
-     */
     VERT,
-    /**
-     * Bleu fonce groupe.
-     */
     BLEU_FONCE;
-    private ArrayList<Propriete> proprietes = new ArrayList<Propriete>();
+    private List<Propriete> proprietes = new ArrayList<>();
     private String nom;
-    private Propriete[] proprietes = new Propriete[4]
-    private String couleur;
-    private int nbProp = 0;
 
-
-    /**
-     * Ajouter propriete.
-     *
-     * @param p the p
-     */
-    void ajouterPropriete(Propriete p){
-        if (this.equals(p.getGroupe())){
-            this.proprietes.add(p);
-        }
+    private Groupe() {
+        this.nom = "Groupe " + this.name().toLowerCase();
     }
 
-    /**
-     * Get proprietes array list.
-     *
-     * @return the array list
-     */
-    public ArrayList<Propriete> getProprietes(){
+    private Groupe(String nom) {
+        this.nom = nom;
+    }
+
+    @Override
+    public String toString() {
+        return this.nom;
+    }
+
+    void ajouterPropriete(Propriete p) {
+        assert this.equals(p.getGroupe());
+        this.proprietes.add(p);
+    }
+
+    public Iterable<Propriete> getProprietes() {
         return this.proprietes;
     }
 
-    /**
-     * Get nb propriete int.
-     *
-     * @return the int
-     */
-    public int getNbPropriete(){
+    public int getNbProprietes() {
         return this.proprietes.size();
     }
 }

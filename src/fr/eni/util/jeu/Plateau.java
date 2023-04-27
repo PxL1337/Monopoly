@@ -47,7 +47,6 @@ public class Plateau<T extends Affichable> {
             }
             System.out.println();
         }
-        }
     }
 
     /**

@@ -1,19 +1,22 @@
 package fr.eni.monopoly.cases;
 
+import fr.eni.monopoly.AllerEnPrisonException;
+import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
+import fr.eni.monopoly.Pioche;
+import fr.eni.monopoly.actions.Action;
 
 /**
  * The type Chance.
  */
 public class Chance extends PiocherCase {
-    private Pioche carte;
+    protected static Pioche carte = new Pioche()
 
     /**
      * Instantiates a new Chance.
      */
     public Chance() {
         super("Chance");
-        carte = new Pioche();
     }
 
     /**
@@ -21,22 +24,14 @@ public class Chance extends PiocherCase {
      *
      * @param j the j
      */
-    protected tirerCarte(Joueur j) {
-        carte.tirerCarte(j);
+    protected void tirerCarte(Joueur j) throws FailliteException, AllerEnPrisonException {
+        Action a = Chance.carte.tirer();
     }
 
     /**
      * Instantiates a new Remettre en jeu.
      */
-    public remettreEnJeu() {
-        carte.remettreEnJeu();
-    }
-
-    /**
-     * Gets cartes.
-     *
-     * @return the cartes
-     */
-    public static Object getCartes() {
+    public static void remettreEnJeu(Action carte) {
+        Chance.carte.ajouter(carte);
     }
 }

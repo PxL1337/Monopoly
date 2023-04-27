@@ -1,5 +1,7 @@
 package fr.eni.monopoly.cases;
 
+import fr.eni.monopoly.AllerEnPrisonException;
+import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 
 /**
@@ -25,7 +27,7 @@ public class Depart extends Case{
     }
 
     @Override
-    public void joueurArrive(Joueur j) {
+    public void joueurArrive(Joueur j) throws FailliteException, AllerEnPrisonException {
         super.joueurArrive(j);
         payerSalaire(j);
     }
