@@ -100,7 +100,7 @@ public class Joueur {
         } while (choix != 0);
     }
 
-    private void echanger() {
+    private void echanger() throws FailliteException {
         List<Joueur> adversaires = new ArrayList<>();
         Maillon<Joueur> courant = Monopoly.getJoueurs().getEntree();
         for (int i = 0; i < Monopoly.getJoueurs().getNbElements(); i++) {
@@ -158,7 +158,9 @@ public class Joueur {
         if (nbConstructions / nbProp < 5) {
             int nbConsManq = nbProp * 5 - nbConstructions;
             String s = nbConsManq > 1 ? "s" : "";
-            int nb = Outils.saisie(String.format("Combien voulez-vous construire sur le goupe %s (Il reste %d construction%s possible%s sur ce groupe, %d€ par construction)", groupe, nbConsManq, s, s, t.getCoutConstruction(), 0,nbConsManq);
+            int nb = Outils.saisie(String.format(
+                    "Combien voulez-vous construire sur le groupe %s (il reste %d construction%s possible%s sur ce groupe, %d€/construction) ?",
+                    groupe, nbConsManq, s, s, t.getCoutConstruction()), 0, nbConsManq);
             if (nb > 0) {
                 int nbMaisonsConstructibles = nbProp * 4 - nbConstructions;
                 int nbMaisonsAConstruire = Math.min(nbMaisonsConstructibles, nb);

@@ -7,19 +7,16 @@ import java.util.List;
  * The enum Groupe.
  */
 public enum Groupe {
-    /**
-     * Gare groupe.
-     */
-    GARE,
-    COMPAGNIE,
+    GARE("groupe des gares"),
+    SERVICE_PUBLIC("groupe des services publics"),
     MAUVE,
-    BLEU_CIEL,
-    ROSE,
+    BLEU,
+    VIOLET,
     ORANGE,
     ROUGE,
     JAUNE,
     VERT,
-    BLEU_FONCE;
+    MARINE("groupe bleu marine");
     private List<Propriete> proprietes = new ArrayList<>();
     private String nom;
 

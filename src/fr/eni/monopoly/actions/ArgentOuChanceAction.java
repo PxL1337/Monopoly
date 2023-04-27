@@ -29,8 +29,7 @@ public class ArgentOuChanceAction extends Action {
     @Override
     public void realiser(Joueur j) throws FailliteException, AllerEnPrisonException {
         super.realiser(j);
-        List<String> propositions = Arrays.asList(...a:
-        "Payer", "Tirer une carte Chance");
+        List<String> propositions = Arrays.asList("Payer", "Tirer une carte Chance");
         int choix = Outils.choix("Que choisissez-vous ?", propositions);
         if (choix == 0) {
             j.debiter(somme);

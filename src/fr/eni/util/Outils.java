@@ -22,7 +22,7 @@ public class Outils {
         return Outils.r.nextInt(max);
     }
 
-    private static int saisie(String message, int min, int max) {
+    public static int saisie(String message, int min, int max) {
         int val = 0;
         boolean ok;
         do {

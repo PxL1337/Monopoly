@@ -26,6 +26,8 @@ public abstract class Propriete extends Case implements Detenable {
         this.hypothequee = false;
     }
 
+
+
     /**
      * {@inheritDoc}
      *

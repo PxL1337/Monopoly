@@ -26,7 +26,7 @@ public class CaisseDeLaCommunaute extends PiocherCase {
      * @throws FailliteException      the faillite exception
      * @throws AllerEnPrisonException the aller en prison exception
      */
-    protected tirerCarte(Joueur j) throws FailliteException, AllerEnPrisonException {
+    protected void tirerCarte(Joueur j) throws FailliteException, AllerEnPrisonException {
         Action a = CaisseDeLaCommunaute.cartes.tirer();
         a.realiser(j);
     }

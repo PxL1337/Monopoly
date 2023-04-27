@@ -28,7 +28,7 @@ public class Case {
      * @param j the j
      * @return the boolean
      */
-    public boolean joueurPart(Joueur j) {
+    public boolean joueurPart(Joueur j) throws FailliteException {
         System.out.printf("%s est sur la case %s%n", j, this.nom);
         return true;
     }

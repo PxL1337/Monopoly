@@ -14,7 +14,7 @@ public class ServicePublic extends Propriete {
      * @param nom the nom
      */
     public ServicePublic(String nom) {
-        super(nom);
+        super(nom, 150, Groupe.SERVICE_PUBLIC);
     }
 
     @Override
