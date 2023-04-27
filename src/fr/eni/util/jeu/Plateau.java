@@ -3,8 +3,6 @@ package fr.eni.util.jeu;
 import java.util.ArrayList;
 import java.util.List;
 
-import static jdk.internal.org.jline.utils.Colors.s;
-
 /**
  * The type Plateau.
  *
@@ -39,7 +37,7 @@ public class Plateau<T extends Affichable> {
         System.out.println();
         for (int i = 1; i <= this.largeur; i++)
             System.out.printf("%d ", i);
-            System.out.println();
+        System.out.println();
         for (int j = 0; j < this.hauteur; j++) {
             System.out.printf("%d ", j + 1);
             for (int i = 0; i < this.largeur; i++) {

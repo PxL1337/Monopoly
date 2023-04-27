@@ -4,7 +4,7 @@ package fr.eni.monopoly;
 /**
  * The type Faillite exception.
  */
-public class FailliteException extends Exception{
+public class FailliteException extends Exception {
     private static final long serialVersionUID = 1L;
     private Joueur joueur;
 

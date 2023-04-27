@@ -1,8 +1,8 @@
 package fr.eni.monopoly.actions;
 
+import fr.eni.monopoly.AllerEnPrisonException;
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
-import fr.eni.monopoly.AllerEnPrisonException;
 
 /**
  * The type Action.

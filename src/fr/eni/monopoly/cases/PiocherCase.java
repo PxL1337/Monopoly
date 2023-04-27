@@ -7,7 +7,7 @@ import fr.eni.monopoly.Joueur;
 /**
  * The type Piocher case.
  */
-public abstract class PiocherCase extends Case{
+public abstract class PiocherCase extends Case {
     /**
      * Instantiates a new Piocher case.
      *
@@ -16,7 +16,7 @@ public abstract class PiocherCase extends Case{
     public PiocherCase(String nom) {
         super(nom);
     }
-    
+
     public void joueurArrive(Joueur j) throws FailliteException, AllerEnPrisonException {
         super.joueurArrive(j);
         this.tirerCarte(j);

@@ -6,18 +6,26 @@ import fr.eni.monopoly.Joueur;
 /**
  * The type Terrain.
  */
-public class Terrain extends Propriete{
+public class Terrain extends Propriete {
+    private static int nbMaisonsDispo = 32;
+    private static int nbHotelsDispo = 12;
     private int[] loyer;
     private int coutConstruction;
     private int niveauConstruction;
-    private static int nbMaisonsDispo = 32;
-    private static int nbHotelsDispo = 12;
 
     public Terrain(String nom, int prixAchat, int[] loyers, Groupe groupe, int coutConstruction) {
         super(nom, prixAchat, groupe);
         this.loyer = loyers;
         this.coutConstruction = coutConstruction;
         this.niveauConstruction = 0;
+    }
+
+    public static int getNbMaisonsDispo() {
+        return nbMaisonsDispo;
+    }
+
+    public static int getNbHotelsDispo() {
+        return nbHotelsDispo;
     }
 
     @Override
@@ -36,19 +44,11 @@ public class Terrain extends Propriete{
         return niveauConstruction;
     }
 
-    public static int getNbMaisonsDispo() {
-        return nbMaisonsDispo;
-    }
-
-    public static int getNbHotelsDispo() {
-        return nbHotelsDispo;
-    }
-
     public void construire() {
-        if(this.niveauConstruction < 4)
+        if (this.niveauConstruction < 4)
             Terrain.nbMaisonsDispo--;
-        else if (this.niveauConstruction == 4){
-            Terrain.nbMaisonsDispo+=4;
+        else if (this.niveauConstruction == 4) {
+            Terrain.nbMaisonsDispo += 4;
             Terrain.nbHotelsDispo--;
         }
         this.niveauConstruction++;

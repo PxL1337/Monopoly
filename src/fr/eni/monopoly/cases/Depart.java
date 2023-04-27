@@ -7,7 +7,7 @@ import fr.eni.monopoly.Joueur;
 /**
  * The type Depart.
  */
-public class Depart extends Case{
+public class Depart extends Case {
 
     /**
      * The constant SALAIRE.

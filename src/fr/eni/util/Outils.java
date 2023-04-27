@@ -37,7 +37,7 @@ public class Outils {
             if (!ok) {
                 System.out.println("Saisie incorrecte, veuillez recommencer");
             }
-        }   while (!ok);
+        } while (!ok);
         assert val >= min && val <= max;
         return val;
     }

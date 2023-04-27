@@ -6,9 +6,9 @@ import java.util.Random;
  * The type De 2.
  */
 public class De2 {
+    private static Random rand = new Random();
     private int nbFaces;
     private int FaceTiree;
-    private static Random rand = new Random();
 
     private De2() {
     }
@@ -27,6 +27,12 @@ public class De2 {
         return d;
     }
 
+    private static void verifNbFaces(int nbFaces) {
+        if (nbFaces <= 1) {
+            throw new IllegalArgumentException("Un dé doit avoir au moins 2 faces");
+        }
+    }
+
     /**
      * Gets nb faces.
      *
@@ -39,12 +45,6 @@ public class De2 {
     private void setNbFaces(int nbFaces) {
         De2.verifNbFaces(nbFaces);
         this.nbFaces = nbFaces;
-    }
-
-    private static void verifNbFaces(int nbFaces) {
-        if (nbFaces <= 1) {
-            throw new IllegalArgumentException("Un dé doit avoir au moins 2 faces");
-        }
     }
 
     /**

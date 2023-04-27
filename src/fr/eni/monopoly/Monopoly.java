@@ -6,17 +6,10 @@ import fr.eni.util.Anneau;
  * The type Monopoly.
  */
 public class Monopoly {
-    /**
-     * The entry point of application.
-     *
-     * @param args the input arguments
-     */
-    public static void main(String[] args) {
 
-    }
+
 
     private static void jouer() throws AllerEnPrisonException {
-
 
 
         try {
@@ -28,7 +21,7 @@ public class Monopoly {
                 }
             }
             joueurCourant.get().jouer(Monopoly.de1.getFaceTiree(), Monopoly.de2.getFaceTiree());
-        } catch (FailliteException e){
+        } catch (FailliteException e) {
             Monopoly.joueurs.retirer(e.getJoueur());
             System.err.println(e.getMessage());
         }

@@ -13,18 +13,7 @@ public class CaisseDeLaCommunaute extends PiocherCase {
     private static Pioche cartes = new Pioche();
 
     /**
-     * Gets cartes.
-     *
-     * @return the cartes
-     */
-    public static Pioche getCartes() {
-        return CaisseDeLaCommunaute.cartes;
-    }
-
-    /**
      * Instantiates a new Caisse de la communaute.
-     *
-     *
      */
     public CaisseDeLaCommunaute() {
         super("Caisse de la communauté");
@@ -38,8 +27,17 @@ public class CaisseDeLaCommunaute extends PiocherCase {
      * @throws AllerEnPrisonException the aller en prison exception
      */
     protected tirerCarte(Joueur j) throws FailliteException, AllerEnPrisonException {
-    Action a = CaisseDeLaCommunaute.cartes.tirer();
+        Action a = CaisseDeLaCommunaute.cartes.tirer();
         a.realiser(j);
+    }
+
+    /**
+     * Gets cartes.
+     *
+     * @return the cartes
+     */
+    public static Pioche getCartes() {
+        return CaisseDeLaCommunaute.cartes;
     }
 
     /**

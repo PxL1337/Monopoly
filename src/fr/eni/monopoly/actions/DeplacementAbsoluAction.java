@@ -9,7 +9,7 @@ import fr.eni.util.Maillon;
 /**
  * The type Deplacement absolu action.
  */
-public class DeplacementAbsoluAction extends Action{
+public class DeplacementAbsoluAction extends Action {
     private Maillon<Case> cible;
     private boolean direct;
 

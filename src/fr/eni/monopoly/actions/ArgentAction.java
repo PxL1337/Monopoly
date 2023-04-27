@@ -7,7 +7,7 @@ import fr.eni.monopoly.Joueur;
 /**
  * The type Argent action.
  */
-public class ArgentAction extends Action{
+public class ArgentAction extends Action {
     private int somme;
 
     /**

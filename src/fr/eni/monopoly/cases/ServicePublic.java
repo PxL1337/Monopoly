@@ -7,7 +7,7 @@ import fr.eni.monopoly.Monopoly;
 /**
  * The type Service public.
  */
-public class ServicePublic extends Propriete{
+public class ServicePublic extends Propriete {
     /**
      * Instantiates a new Service public.
      *
@@ -19,8 +19,8 @@ public class ServicePublic extends Propriete{
 
     @Override
     protected void payerLoyer(Joueur utilisateur, Joueur proprietaire) throws FailliteException {
-        int nb = this.txComplGroupe*2/100;
-        String s = nb<2?"":"s";
+        int nb = this.txComplGroupe * 2 / 100;
+        String s = nb < 2 ? "" : "s";
         int loyer = Monopoly.getDe1().getFaceTiree() + Monopoly.getDe2().getFaceTiree();
         if (nb == 1) {
             loyer *= 4;

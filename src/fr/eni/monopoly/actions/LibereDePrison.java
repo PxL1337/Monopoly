@@ -20,6 +20,7 @@ public class LibereDePrison extends Action implements Detenable {
         super.realiser(j);
         this.setProprio(j);
     }
+
     @Override
     public Joueur getProprio() {
         return this.proprio;

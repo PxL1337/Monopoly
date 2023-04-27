@@ -20,18 +20,18 @@ public class Chance extends PiocherCase {
     }
 
     /**
+     * Instantiates a new Remettre en jeu.
+     */
+    public static void remettreEnJeu(Action carte) {
+        Chance.carte.ajouter(carte);
+    }
+
+    /**
      * Instantiates a new Tirer carte.
      *
      * @param j the j
      */
     protected void tirerCarte(Joueur j) throws FailliteException, AllerEnPrisonException {
         Action a = Chance.carte.tirer();
-    }
-
-    /**
-     * Instantiates a new Remettre en jeu.
-     */
-    public static void remettreEnJeu(Action carte) {
-        Chance.carte.ajouter(carte);
     }
 }

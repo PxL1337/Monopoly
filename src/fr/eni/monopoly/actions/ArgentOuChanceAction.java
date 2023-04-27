@@ -3,8 +3,8 @@ package fr.eni.monopoly.actions;
 import fr.eni.monopoly.AllerEnPrisonException;
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
-import fr.eni.util.Outils;
 import fr.eni.monopoly.cases.Chance;
+import fr.eni.util.Outils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * The type Argent ou chance action.
  */
-public class ArgentOuChanceAction extends Action{
+public class ArgentOuChanceAction extends Action {
     private int somme;
 
     /**
@@ -29,9 +29,10 @@ public class ArgentOuChanceAction extends Action{
     @Override
     public void realiser(Joueur j) throws FailliteException, AllerEnPrisonException {
         super.realiser(j);
-        List<String> propositions = Arrays.asList(...a:"Payer", "Tirer une carte Chance");
+        List<String> propositions = Arrays.asList(...a:
+        "Payer", "Tirer une carte Chance");
         int choix = Outils.choix("Que choisissez-vous ?", propositions);
-        if(choix == 0){
+        if (choix == 0) {
             j.debiter(somme);
         } else {
             Action a = Chance.getCartes().tirer();

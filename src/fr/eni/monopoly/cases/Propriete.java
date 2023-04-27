@@ -11,10 +11,10 @@ import fr.eni.util.Outils;
  */
 public abstract class Propriete extends Case implements Detenable {
 
+    protected int txComplGroupe;
     private int prixAchat;
     private Joueur proprio;
     private Groupe groupe;
-    protected int txComplGroupe;
     private boolean hypothequee;
 
     public Propriete(String nom, int prixAchat, Groupe groupe) {
@@ -30,7 +30,6 @@ public abstract class Propriete extends Case implements Detenable {
      * {@inheritDoc}
      *
      * @throws FailliteException
-     *
      */
     @Override
     public void joueurArrive(Joueur j) throws FailliteException, AllerEnPrisonException {
@@ -87,7 +86,6 @@ public abstract class Propriete extends Case implements Detenable {
 
     /**
      * {@inheritDoc}
-     *
      */
     @Override
     public Joueur getProprio() {
@@ -96,19 +94,19 @@ public abstract class Propriete extends Case implements Detenable {
 
     /**
      * {@inheritDoc}
-     *
      */
     @Override
     public void setProprio(Joueur j) {
         Joueur ancienProprio = this.proprio;
         this.proprio = j;
-        if(ancienProprio != null)
+        if (ancienProprio != null)
             this.calculerCompletionGroupe(ancienProprio);
         this.calculerCompletionGroupe(j);
     }
 
     /**
      * Getter pour hypothequee.
+     *
      * @return the hypothequee
      */
     public boolean isHypothequee() {
@@ -117,6 +115,7 @@ public abstract class Propriete extends Case implements Detenable {
 
     /**
      * Setter pour hypothequee.
+     *
      * @param hypothequee the hypothequee to set
      */
     public void setHypothequee(boolean hypothequee) {
@@ -130,7 +129,6 @@ public abstract class Propriete extends Case implements Detenable {
 
     /**
      * {@inheritDoc}
-     *
      */
     @Override
     public String toString() {

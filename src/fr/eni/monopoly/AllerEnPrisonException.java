@@ -3,7 +3,7 @@ package fr.eni.monopoly;
 /**
  * The type Aller en prison exception.
  */
-public class AllerEnPrisonException extends Exception{
+public class AllerEnPrisonException extends Exception {
     private static final long serialVersionUID = 1L;
     private Joueur joueur;
 

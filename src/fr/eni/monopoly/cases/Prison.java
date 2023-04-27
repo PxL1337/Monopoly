@@ -1,18 +1,18 @@
 package fr.eni.monopoly.cases;
 
-import java.util.Hashtable;
-import java.util.Map;
-
 import fr.eni.monopoly.FailliteException;
 import fr.eni.monopoly.Joueur;
 import fr.eni.monopoly.Monopoly;
 import fr.eni.util.Outils;
 
+import java.util.Hashtable;
+import java.util.Map;
+
 /**
  * The type Prison.
  */
-public class Prison extends Case{
-    private Map<Joueur,Integer> nbTentatives = new Hashtable<>();
+public class Prison extends Case {
+    private Map<Joueur, Integer> nbTentatives = new Hashtable<>();
 
     /**
      * Instantiates a new Prison.
@@ -25,7 +25,7 @@ public class Prison extends Case{
     public boolean joueurPart(Joueur j) throws FailliteException {
         super.joueurPart(j);
         boolean part = false;
-        if(Monopoly.getDe1().gestFaceTiree() == Monopoly.getDe2().getFaceTiree()) {
+        if (Monopoly.getDe1().gestFaceTiree() == Monopoly.getDe2().getFaceTiree()) {
             part = true;
             System.out.printf("Un double fait sortir %s gratuitement de prison%n", j);
         } else {
@@ -45,8 +45,8 @@ public class Prison extends Case{
                 part = true;
             }
         }
-            if (part)
-                this.nbTentatives.remove(j);
-            return part;
+        if (part)
+            this.nbTentatives.remove(j);
+        return part;
     }
 }
