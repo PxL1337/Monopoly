@@ -10,10 +10,10 @@ import fr.eni.monopoly.actions.Action;
  * The type Chance.
  */
 public class Chance extends PiocherCase {
-    protected static Pioche carte = new Pioche();
+    protected static Pioche cartes = new Pioche();
 
     public static Pioche getCartes() {
-        return Chance.carte;
+        return Chance.cartes;
     }
 
 
@@ -28,7 +28,7 @@ public class Chance extends PiocherCase {
      * Instantiates a new Remettre en jeu.
      */
     public static void remettreEnJeu(Action carte) {
-        Chance.carte.ajouter(carte);
+        Chance.cartes.ajouter(carte);
     }
 
 
@@ -38,6 +38,7 @@ public class Chance extends PiocherCase {
      * @param j the j
      */
     protected void tirerCarte(Joueur j) throws FailliteException, AllerEnPrisonException {
-        Action a = Chance.carte.tirer();
+        Action a = Chance.cartes.tirer();
+        a.realiser(j);
     }
 }

@@ -15,7 +15,7 @@ public class Pioche {
     public void ajouter(Action a) {
         this.cartes.ajouter(a);
         if (this.position == null) {
-            this.position = this.cartes.getPtEntree();
+            this.position = this.cartes.getEntree();
         }
     }
 

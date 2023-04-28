@@ -6,9 +6,7 @@ import fr.eni.util.Anneau;
 import fr.eni.util.Maillon;
 import fr.eni.util.Outils;
 import fr.eni.util.jeu.deDes.De;
-import fr.eni.monopoly.cases.Groupe;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,11 +47,12 @@ public class Monopoly {
         return de2;
     }
 
-    public static void main(String[] args) throws FileNotFoundException, AllerEnPrisonException {
+    public static void main(String[] args){
         Monopoly.jouer();
     }
 
-    private static void jouer() throws AllerEnPrisonException {
+    private static void jouer() {
+        Monopoly.init();
         Maillon<Joueur> joueurCourant = Monopoly.joueurs.getEntree();
         while (Monopoly.joueurs.getNbElements() > 1) {
             System.out.printf("C'est au tour de %s (solde : %d€)%n", joueurCourant.get(), joueurCourant.get().getArgent());
@@ -156,7 +155,7 @@ public class Monopoly {
 
         /////////////////////////// Création des joueurs
         /////////////////////////// ///////////////////////////
-        int nbJoueurs = Outils.saisie("Combien de joueurs ?", 2, 10);
+        int nbJoueurs = Outils.saisie("Combien de joueurs ? (2 à 10)", 2, 10);
         List<Joueur> concurents = new ArrayList<>();
         for (int i = 0; i < nbJoueurs; i++) {
             String nom = Outils.saisie(String.format("Entrez le nom du joueur n°%d", i + 1));
@@ -203,7 +202,7 @@ public class Monopoly {
         liste.add(new ArgentAction("Amende pour ivresse :", -20));
         liste.add(new ArgentAction("Payez pour frais de scolarité", -150));
         liste.add(Monopoly.libereChance);
-        liste.add(new AllezEnPrison());
+        liste.add(new AllezEnPrisonAction());
         liste.add(new DeplacementAbsoluAction("Avancer jusqu'à la case Départ", depart, true));
         liste.add(new DeplacementAbsoluAction("Rendez-vous à la Rue de la Paix", rueDeLaPaix, false));
         liste.add(new DeplacementAbsoluAction("Rendez-vous à l'Avenue Henri-Martin. Si vous passez par la case Départ recevez 200€", henriMartin, false));
@@ -218,7 +217,7 @@ public class Monopoly {
     }
 
     /**
-     * @param j
+     * @param j de type joueur
      */
     public static void utiliserLibereDePrison(Joueur j) {
         if(j.equals(Monopoly.getLibereCaisse().getProprio())) {

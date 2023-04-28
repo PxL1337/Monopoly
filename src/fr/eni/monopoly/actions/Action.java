@@ -20,15 +20,6 @@ public abstract class Action {
     }
 
     /**
-     * Gets libelle.
-     *
-     * @return the libelle
-     */
-    public String getLibelle() {
-        return libelle;
-    }
-
-    /**
      * Realiser.
      *
      * @param j the j
@@ -36,7 +27,7 @@ public abstract class Action {
      * @throws AllerEnPrisonException the aller en prison exception
      */
     public void realiser(Joueur j) throws FailliteException, AllerEnPrisonException {
-        System.out.printf("Carte Triée %s%n", libelle);
+        System.out.printf("Carte Tirée %s%n", libelle);
     }
 
     @Override

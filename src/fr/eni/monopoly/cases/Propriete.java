@@ -65,7 +65,7 @@ public abstract class Propriete extends Case implements Detenable {
             if (p.proprio == j)
                 p.txComplGroupe = 100 * nbPJ / nbPT;
         }
-        System.out.printf("Groupe détenu à %d%% (%d/%d) par %s%n", 100 * nbPJ / nbPT, nbPJ, nbPT, j);
+        System.out.printf("Groupe " + this.groupe + "détenu à %d%% (%d/%d) par %s%n", 100 * nbPJ / nbPT, nbPJ, nbPT, j);
     }
 
     /**

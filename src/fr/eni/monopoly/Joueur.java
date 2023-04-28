@@ -133,7 +133,7 @@ public class Joueur {
     private List<Detenable> choixCartes(Joueur j) {
         List<Detenable> cartes = new ArrayList<>();
         List<Detenable> possJ = j.getCartesEchangeables();
-        System.out.println("Caertes détenues par " + j);
+        System.out.println("Cartes détenues par " + j);
         int nb = 0;
         for (Detenable c : possJ) {
             System.out.println(c);
@@ -231,7 +231,6 @@ public class Joueur {
                 if (nbConstructions / nbProp < 5) {
                     groupes.add(g);
                 }
-
             }
         }
         return groupes;
@@ -276,8 +275,7 @@ public class Joueur {
         List<Detenable> cartes = new ArrayList<>();
         Maillon<Case> courant = Monopoly.getPlateau().getEntree();
         for (int i = 0; i < Monopoly.getPlateau().getNbElements(); i++) {
-            if (courant.get() instanceof Propriete) {
-                Propriete p = (Propriete) courant.get();
+            if (courant.get() instanceof Propriete p) {
                 if (this.equals(p.getProprio())) {
                     if (p instanceof Terrain) {
                         boolean terrainNu = true;

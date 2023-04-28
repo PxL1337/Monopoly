@@ -8,8 +8,8 @@ import java.util.Scanner;
  * The type Outils.
  */
 public class Outils {
-    private static Random r = new Random();
-    private static Scanner s = new Scanner(System.in);
+    private static final Random r = new Random();
+    private static final Scanner s = new Scanner(System.in);
 
 
     /**
@@ -23,6 +23,7 @@ public class Outils {
     }
 
     public static int saisie(String message, int min, int max) {
+        System.out.printf("%s ", message);
         int val = 0;
         boolean ok;
         do {
